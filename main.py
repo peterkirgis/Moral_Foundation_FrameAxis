@@ -48,6 +48,7 @@ if __name__ == '__main__':
         model = gensim.downloader.load('word2vec-google-news-300')
 
     data = pd.read_csv(IN_PATH, lineterminator='\n')
+    print(data.columns)
 
     fa = FrameAxis(mfd=DICT_TYPE, w2v_model=model)
     mf_scores = fa.get_fa_scores(df=data, doc_colname=DOCS_COL, tfidf=False, format="virtue_vice",
